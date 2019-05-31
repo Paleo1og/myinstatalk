@@ -1,24 +1,20 @@
-# README
+<h3> Мини чат комната для общения</h3>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Приложение будет дорабатываться
 
-Things you may want to cover:
+Для начала работы с приложением скопируйте его на компьютер
 
-* Ruby version
+Затем установите необходимые гемы и добавьте миграции
 
-* System dependencies
+`bundle install`
 
-* Configuration
+`bundle exec rails db:migrate`
 
-* Database creation
+При необходимости обновите: 
 
-* Database initialization
+`bundle update`
 
-* How to run the test suite
+Для запуска на локальном хосте: `localhost:3000`
 
-* Services (job queues, cache servers, search engines, etc.)
+Приложение готово для деплоя на heroku (см. инструкцию на их сайте)
 
-* Deployment instructions
-
-* ...
