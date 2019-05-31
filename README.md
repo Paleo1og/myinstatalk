@@ -18,4 +18,4 @@
 
 Приложение готово для деплоя на heroku (см. инструкцию на их сайте)
 
- Демо версия - [myinstatalk.herokuapp.com](myinstatalk.herokuapp.com)
+ Демо версия - [myinstatalk.herokuapp.com](https://myinstatalk.herokuapp.com/)
