@@ -302,3 +302,75 @@ Processing by RoomsController#index as HTML
 Completed 200 OK in 119ms (Views: 113.0ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-05-30 23:21:17 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/paleo1og/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/index.html.erb:6
+  Rendered collection of rooms/_room.html.erb [2 times] (4.7ms)
+  Rendered rooms/_form.html.erb (3.1ms)
+  Rendered rooms/index.html.erb within layouts/application (21.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1044ms (Views: 972.5ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/rooms/bca2" for 127.0.0.1 at 2019-05-30 23:21:20 +0700
+Processing by RoomsController#show as HTML
+  Parameters: {"token"=>"bca2"}
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."token" = ? LIMIT ?[0m  [["token", "bca2"], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:21
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."room_id" = ?[0m  [["room_id", 1]]
+  ↳ app/views/rooms/show.html.erb:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (12.9ms)
+  Rendered messages/_form.html.erb (4.1ms)
+  Rendered rooms/show.html.erb within layouts/application (113.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 221ms (Views: 205.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/rooms/bca2" for 127.0.0.1 at 2019-05-30 23:21:29 +0700
+Processing by RoomsController#show as HTML
+  Parameters: {"token"=>"bca2"}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."token" = ? LIMIT ?[0m  [["token", "bca2"], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:21
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."room_id" = ?[0m  [["room_id", 1]]
+  ↳ app/views/rooms/show.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:3
+  Rendered collection of messages/_message.html.erb [1 times] (5.0ms)
+  Rendered messages/_form.html.erb (3.4ms)
+  Rendered rooms/show.html.erb within layouts/application (19.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 180ms (Views: 174.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-05-30 23:22:10 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-05-30 23:22:10 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:14
+[ActionCable] [Leah] Registered connection (Z2lkOi8vaW5zdGF0YWxrL1VzZXIvMQ)
+[ActionCable] [Leah] Subscribed to RoomChannel, roomId: 1
+[ActionCable] [Leah]   [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActionCable] [Leah]   ↳ app/channels/room_channel.rb:5
+[ActionCable] [Leah] RoomChannel, speak: {"message"=>"* * * joined the room * * *"}
+[ActionCable] [Leah] RoomChannel is streaming from room_channel_1
+[ActionCable] [Leah]   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[ActionCable] [Leah]   ↳ app/services/message_service.rb:16
+[ActionCable] [Leah]   [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "room_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["body", "* * * joined the room * * *"], ["user_id", 1], ["room_id", 1], ["created_at", "2019-05-30 16:22:10.134302"], ["updated_at", "2019-05-30 16:22:10.134302"]]
+[ActionCable] [Leah]   ↳ app/services/message_service.rb:16
+[ActionCable] [Leah]   [1m[35m (77.8ms)[0m  [1m[36mcommit transaction[0m
+[ActionCable] [Leah]   ↳ app/services/message_service.rb:16
+[ActionCable] [Leah]   Rendered messages/_message.html.erb (2.1ms)
+[ActionCable] [Leah] [ActionCable] Broadcasting to room_channel_1: {:message=>"<div class=\"row message mt-1\">\n  <div class=\"col-2 font-weight-bold text-info\">\n    Leah\n  </div>\n\n  <div class=\"col-10\">\n    <div class=\"float-right small badge badge-light\">\n      16:22\n    </div>\n\n    <div>* * * joined the room * * *</div>\n\n  </div>\n</div>\n"}
+[ActionCable] [Leah] RoomChannel is transmitting the subscription confirmation
+[ActionCable] [Leah] RoomChannel transmitting {"message"=>"<div class=\"row message mt-1\">\n  <div class=\"col-2 font-weight-bold text-info\">\n    Leah\n  </div>\n\n  <div class=\"col-10\">\n    <div class=\"float-right small badge badge-light\">\n      16:22\n    </div>\n\n    <div>* * * joined the room * * *</div>\n\n  </div>\n</div>\n"} (via streamed from room_channel_1)
